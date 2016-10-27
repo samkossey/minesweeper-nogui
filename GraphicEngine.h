@@ -3,12 +3,12 @@
 
 class GraphicEngine {
    public:
-      void clearScreen();
-      void printIntro();
+      void clearScreen(void);
+      void printIntro(void);
       void drawEmptyBoard(int width, int height);
       void drawBoard(int pos, int val);
-      void drawYouWon();
-      void drawYouLost();
+      void drawYouWon(void);
+      void drawYouLost(void);
 };
 
 #endif // GRAPHICENGINE_H

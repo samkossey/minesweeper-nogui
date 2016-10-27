@@ -3,13 +3,15 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <random>
+#include <chrono>
 #include "Validation.h"
 #include "GraphicEngine.h"
 
 
 using namespace std;
 
-bool goalFunction(int number_of_mines, int not_revealed_squares)
+static bool goalFunction(int number_of_mines, int not_revealed_squares)
 {
    //if number of mines == not revealed square count
    if(number_of_mines == not_revealed_squares)
@@ -20,7 +22,7 @@ bool goalFunction(int number_of_mines, int not_revealed_squares)
    return false;
 }
 
-bool goalFunctionMarkMine(int number_of_mines, int marked_squares)
+static bool goalFunctionMarkMine(int number_of_mines, int marked_squares)
 {
    //if number of mines == not revealed square count
    if(number_of_mines == marked_squares)
@@ -36,11 +38,14 @@ bool goalFunctionMarkMine(int number_of_mines, int marked_squares)
  then generates a random number and returns it
  -- should generate a number between 1 and 'limit'
 */
-int randomNumber(int limit)
+static int randomNumber(int limit)
 {
-   srand(time(0));
-   int rnd = 1 + rand() % limit;
-   return rnd;
+   unsigned seed = static_cast<int> (chrono::system_clock::now().time_since_epoch().count());
+   mt19937 generator(seed);
+   uniform_int_distribution<int> distribution(1, limit);
+   int rnd;
+   rnd = distribution(generator);
+   return rnd; 
 }
 
 int main (int argc, char ** argv){

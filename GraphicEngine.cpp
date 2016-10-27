@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void GraphicEngine::clearScreen()
+void GraphicEngine::clearScreen(void)
 {
 	try{
        system("clear");
@@ -26,7 +26,7 @@ void GraphicEngine::clearScreen()
 	}
 }
 
-void GraphicEngine::printIntro()
+void GraphicEngine::printIntro(void)
 {
    GraphicEngine::clearScreen();
    cout << "*******************************************************" << endl;
@@ -73,7 +73,7 @@ void GraphicEngine::drawBoard(int pos, int val)
 }
 
 // http://patorjk.com/software/taag/#p=display&f=Doh&t=BYE%20!
-void GraphicEngine::drawYouWon()
+void GraphicEngine::drawYouWon(void)
 {
 cout<<"YYYYYYY       YYYYYYY     OOOOOOOOO     UUUUUUUU     UUUUUUUU     WWWWWWWW                           WWWWWWWW     OOOOOOOOO     NNNNNNNN        NNNNNNNN"<<endl;
 cout<<"Y:::::Y       Y:::::Y   OO:::::::::OO   U::::::U     U::::::U     W::::::W                           W::::::W   OO:::::::::OO   N:::::::N       N::::::N"<<endl;
@@ -93,7 +93,7 @@ cout<<"    Y:::::::::::Y       OO:::::::::OO       UU:::::::::UU                
 cout<<"    YYYYYYYYYYYYY         OOOOOOOOO           UUUUUUUUU                       WWW             WWW                 OOOOOOOOO     NNNNNNNN         NNNNNNN"<<endl;
 }
 
-void GraphicEngine::drawYouLost()
+void GraphicEngine::drawYouLost(void)
 {
 cout<<"KKKKKKKKK    KKKKKKK               AAA               BBBBBBBBBBBBBBBBB        OOOOOOOOO          OOOOOOOOO          OOOOOOOOO     MMMMMMMM               MMMMMMMM  !!! "<<endl;
 cout<<"K:::::::K    K:::::K              A:::A              B::::::::::::::::B     OO:::::::::OO      OO:::::::::OO      OO:::::::::OO   M:::::::M             M:::::::M !!:!!"<<endl;
